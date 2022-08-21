@@ -1,0 +1,73 @@
+/* Import Google font poppins */
+@import url('https://fonts.googlepis.com/css2?family=Poopins:wght@400;500;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Poopins',sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:#e3f2fd;
+}
+.container{
+    width: 850px;
+    background:#fff;
+    border-radius: 10px;
+    padding: 30px 35px 35px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+.container h2{
+    font-size: 22px;
+    font-weight: 500;
+}
+.container .wrapper{
+    display:flex;
+    margin:20px 0;
+    min-height: 335px;
+}
+.wrapper .editor-panel{
+    width:280px;
+    padding:15px 20px;
+    border-radius: 5px;
+    border:1px solid #ccc;
+}
+.editor-panel .title{
+    display:block;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.editor-panel{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.editor-panel button{
+    height: 40px;
+    font-size: 14px;
+    color:#6c757d;
+    margin-bottom: 8px;
+    margin-right:10px;
+    border-radius: 3px;
+    background:#fff;
+    border:1px solid #aaa;
+}
+.editor-panel button:hover{
+    background:#f5f5f5;
+}
+.editor-panel .filter button{
+    width:calc(100%/2);
+}
+
+#myplaceholder{
+    height: 320px;
+    width:400px;
+}
+.filter button.active{
+    color:#fff;
+    background:#5372f0;
+    border-color:#5372f0;
+}
