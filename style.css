@@ -1,73 +1,197 @@
-/* Import Google font poppins */
-@import url('https://fonts.googlepis.com/css2?family=Poopins:wght@400;500;600&display=swap');
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family:'Poopins',sans-serif;
-}
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background:#e3f2fd;
-}
-.container{
-    width: 850px;
-    background:#fff;
-    border-radius: 10px;
-    padding: 30px 35px 35px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-.container h2{
-    font-size: 22px;
-    font-weight: 500;
-}
-.container .wrapper{
-    display:flex;
-    margin:20px 0;
-    min-height: 335px;
-}
-.wrapper .editor-panel{
-    width:280px;
-    padding:15px 20px;
-    border-radius: 5px;
-    border:1px solid #ccc;
-}
-.editor-panel .title{
-    display:block;
-    font-size: 16px;
-    margin-bottom: 12px;
-}
-.editor-panel{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
-}
-.editor-panel button{
-    height: 40px;
-    font-size: 14px;
-    color:#6c757d;
-    margin-bottom: 8px;
-    margin-right:10px;
-    border-radius: 3px;
-    background:#fff;
-    border:1px solid #aaa;
-}
-.editor-panel button:hover{
-    background:#f5f5f5;
-}
-.editor-panel .filter button{
-    width:calc(100%/2);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-#myplaceholder{
-    height: 320px;
-    width:400px;
+body {
+  display: flex;
+  padding: 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #E3F2FD;
 }
-.filter button.active{
-    color:#fff;
-    background:#5372f0;
-    border-color:#5372f0;
+
+.container {
+  width: 850px;
+  padding: 30px 35px 35px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+.container.disable .editor-panel,
+.container.disable .controls .reset-filter,
+.container.disable .controls .save-img {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.container h2 {
+  margin-top: -8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.container .wrapper {
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+
+.wrapper .editor-panel {
+  padding: 15px 20px;
+  width: 280px;
+  border-radius: 5px;
+
+  border: 2px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 10px, rgba(0, 0, 0, 0.07) 0px 10px 15px, rgba(0, 0, 0, 0.07) 0px 16px 30px;
+}
+
+.editor-panel .title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.editor-panel .options,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.editor-panel button {
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+  color: #6C757D;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: none;
+}
+
+.editor-panel .filter button {
+  width: calc(100% / 2 - 4px);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.editor-panel button:hover {
+  background: #ddddddc9;
+}
+
+.filter button.active {
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background: #05d4e9;
+}
+
+.filter .slider {
+  margin-top: 2px;
+}
+
+.filter .slider .filter-info {
+  display: flex;
+  color: #464646;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.filter .slider input {
+  width: 100%;
+  height: 5px;
+}
+
+.editor-panel .rotate {
+  margin-top: 17px;
+}
+
+.editor-panel .rotate button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 3px);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 8px;
+}
+
+.rotate .options button:nth-child(3),
+.rotate .options button:nth-child(4) {
+  font-size: 18px;
+}
+
+.rotate .options button:active {
+  color: #fff;
+  background: #05e4d9;
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 8px;
+}
+
+.wrapper .preview-img {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+  margin-left: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img img {
+  max-width: 490px;
+  max-height: 335px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.controls button {
+  padding: 11px 20px;
+  font-size: 14px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 8px;
+  border: none;
+}
+
+.controls .reset-filter {
+  color: #fff;
+  background: rgba(241, 58, 58, 0.8);
+}
+
+.controls .reset-filter:hover {
+  background: rgba(223, 41, 41, 0.9);
+}
+
+.controls .choose-img {
+  color: #4a4f53;
+}
+
+.controls .choose-img:hover {
+  background: #ddddddc9;
+}
+
+.controls .save-img {
+  margin-left: 5px;
+  background: #7591fd;
+  color: white;
+}
+
+.controls .save-img:hover {
+  background: #4f6de7;
+  color: white;
 }
